@@ -1,24 +1,3 @@
-# README
+# Task manager project - Aplikacje Mobilne
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A web app for task management. You register an account and add tasks to your or someone elses bucket. A bucket is a container for tasks. Each account has a bucket automaticaly created after sign up.
