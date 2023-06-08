@@ -8,15 +8,29 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
   </head>
 
   <body>
     <% if user_signed_in? %>
-    <div> Welcome <%= current_user.email %> </div>
-        <% if !current_user.bucket.nil? %>
-        <%= link_to "My Bucket", bucket_path(current_user.bucket)%>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="navbar-brand">Task Manager</div>
+      <div class="navbar-links">
+        <% if user_signed_in? %>
+          <% if !current_user.bucket.nil? %>
+            <%= link_to "My Bucket", bucket_path(current_user.bucket) %>
+          <% end %>
         <% end %>
-        <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+      </div>
+      <div class="navbar-links">
+        <% if user_signed_in? %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete %>
+        <% end %>
+      </div>
+    </nav>
+    <div> Welcome <%= current_user.email %> </div>
     <% end %>
     <%= yield %>
   </body>
