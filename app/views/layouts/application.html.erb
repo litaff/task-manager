@@ -20,7 +20,7 @@
       <div class="navbar-links">
         <% if user_signed_in? %>
           <% if !current_user.bucket.nil? %>
-            <%= link_to "My Bucket", bucket_path(current_user.bucket) %>
+            <%= button_to "My Bucket", bucket_path(current_user.bucket), method: :get %>
           <% end %>
         <% end %>
       </div>
@@ -30,7 +30,6 @@
         <% end %>
       </div>
     </nav>
-    <div> Welcome <%= current_user.email %> </div>
     <% end %>
     <%= yield %>
   </body>

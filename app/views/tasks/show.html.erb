@@ -1,9 +1,9 @@
 <h1><%= @task.name %></h1>
-
+<h5>Task Description:</h5>
 <p><%= @task.description %></p>
 
-<h3><%= @task.bucket.name %></h3>
+<h6>Status: <%= @task.status %></h6>
 
-<h6><%= @task.status %></h6>
+<h6>Task owner: <%= @task.bucket.name %></h6>
 
 <%= button_to "Edit task", edit_task_path(@task), method: :get %>
