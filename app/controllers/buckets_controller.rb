@@ -7,6 +7,7 @@ class BucketsController < ApplicationController
 
     def show
         @bucket = Bucket.get_by_owner(current_user.id)
+        @user = current_user
         if @bucket.blank?
             auto_create
         end

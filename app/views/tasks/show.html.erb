@@ -4,6 +4,8 @@
 
 <h6>Status: <%= @task.status %></h6>
 
-<h6>Task owner: <%= @task.bucket.name %></h6>
+<h6>Task taker: <%= @task.bucket.name %></h6>
+
+<h6>Task giver: <%= @task.user.email %></h6>
 
 <%= button_to "Edit task", edit_task_path(@task), method: :get %>

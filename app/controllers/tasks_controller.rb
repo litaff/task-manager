@@ -5,6 +5,7 @@ class TasksController < ApplicationController
 
     def create
         @task = Task.create(task_params(:name, :description, :bucket_id))
+        @task.user_id = current_user.id
         @task.status = "Pending"
         @task.save
         redirect_to task_path(@task)
